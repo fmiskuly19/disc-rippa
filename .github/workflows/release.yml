@@ -1,0 +1,86 @@
+name: Release
+
+# Push a tag like v1.0.0 to publish a release: DiscRippa-<version>.zip with DiscRippa.exe, and HandBrakeCLI and cyanrip
+# (unmodified official builds, with their licenses and source links) in a tools folder. MakeMKV is never included:
+# its license doesn't allow it, so users install it themselves.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+env:
+  HANDBRAKE_VERSION: 1.11.2
+  CYANRIP_VERSION: v0.9.3.1
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Test
+        run: dotnet test tests/DiscRippa.Tests/DiscRippa.Tests.csproj -c Release
+
+      - name: Publish
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          dotnet publish src/DiscRippa/DiscRippa.csproj -c Release -o publish -p:Version=$version
+
+      - name: Package with HandBrakeCLI and cyanrip
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          $hb = $env:HANDBRAKE_VERSION
+          $cr = $env:CYANRIP_VERSION
+          $stage = "stage/DiscRippa-$version"
+          $tools = "$stage/tools"
+          $licenses = "$tools/licenses"
+          New-Item -ItemType Directory -Force $licenses | Out-Null
+          Copy-Item publish/DiscRippa.exe $stage/
+          Copy-Item README.md, LICENSE, THIRD-PARTY-NOTICES.md $stage/
+
+          # HandBrakeCLI: the official Windows build, unmodified
+          Invoke-WebRequest "https://github.com/HandBrake/HandBrake/releases/download/$hb/HandBrakeCLI-$hb-win-x86_64.zip" -OutFile hb.zip
+          Expand-Archive hb.zip hb
+          $cli = Get-ChildItem hb -Recurse -Filter HandBrakeCLI.exe | Select-Object -First 1
+          Copy-Item (Join-Path $cli.DirectoryName '*') $tools -Recurse
+          Invoke-WebRequest "https://raw.githubusercontent.com/HandBrake/HandBrake/$hb/LICENSE" -OutFile "$licenses/HandBrake-LICENSE.txt"
+
+          # cyanrip: the official Windows build, unmodified
+          Invoke-WebRequest "https://github.com/cyanreg/cyanrip/releases/download/$cr/cyanrip-win64.exe" -OutFile "$tools/cyanrip-win64.exe"
+          Invoke-WebRequest "https://raw.githubusercontent.com/cyanreg/cyanrip/$cr/LICENSE.md" -OutFile "$licenses/cyanrip-LICENSE.md"
+          # the Windows build also contains libcdio-paranoia (GPL-3.0-or-later) and FFmpeg
+          Invoke-WebRequest "https://www.gnu.org/licenses/gpl-3.0.txt" -OutFile "$licenses/GPL-3.0.txt"
+
+          @"
+          The programs in this folder are unmodified official builds, included so DiscRippa works out of the box.
+          DiscRippa runs them as separate programs. Each one keeps its own license (see the licenses folder).
+
+          HandBrakeCLI $hb (GPL-2.0)
+            Built by the HandBrake project: https://handbrake.fr
+            Binary: https://github.com/HandBrake/HandBrake/releases/tag/$hb
+            Source: https://github.com/HandBrake/HandBrake/releases/download/$hb/HandBrake-$hb-source.tar.bz2
+
+          cyanrip $cr (LGPL-2.1; the Windows build also includes libcdio-paranoia, GPL-3.0-or-later, and FFmpeg)
+            Built by the cyanrip project: https://github.com/cyanreg/cyanrip
+            Binary: https://github.com/cyanreg/cyanrip/releases/tag/$cr
+            Source: https://github.com/cyanreg/cyanrip/releases/download/$cr/cyanrip-src-$cr.tar.gz
+
+          Prefer your own copies? Delete this folder and point DiscRippa at them in Settings > System > Programs.
+          MakeMKV is not included (its license doesn't allow it): install it from https://www.makemkv.com
+          "@ | Set-Content "$tools/SOURCES.txt" -Encoding utf8
+
+          Compress-Archive -Path $stage -DestinationPath "DiscRippa-$version.zip"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: DiscRippa-*.zip
+          generate_release_notes: true

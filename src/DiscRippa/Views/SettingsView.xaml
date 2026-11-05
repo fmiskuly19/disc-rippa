@@ -1,0 +1,234 @@
+<UserControl x:Class="DiscRippa.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DiscRippa.ViewModels.Shared;assembly=DiscRippa.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel}"
+             FontSize="13">
+    <!-- The Settings page: shown in the main window in place of everything else. Back (or Cancel) returns without saving. -->
+
+    <UserControl.Resources>
+        <Style x:Key="Section" TargetType="TextBlock" BasedOn="{StaticResource Heading}">
+            <Setter Property="FontSize" Value="14.5"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style x:Key="Rule" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource LineBrush}"/>
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="Margin" Value="0,16,0,14"/>
+        </Style>
+        <Style x:Key="Note" TargetType="TextBlock" BasedOn="{StaticResource SubtleText}">
+            <Setter Property="FontSize" Value="11.5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="2,4,0,0"/>
+        </Style>
+        <Style TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
+            <Setter Property="FontSize" Value="13.5"/>
+        </Style>
+        <Style x:Key="Page" TargetType="ScrollViewer">
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="Padding" Value="0,0,12,0"/>
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel MaxWidth="820">
+        <Border DockPanel.Dock="Bottom" Padding="24,10,24,4">
+            <DockPanel LastChildFill="False">
+                <Button DockPanel.Dock="Left" Style="{StaticResource LinkButton}" VerticalAlignment="Center"
+                        Content="Open the data folder" ToolTip="Logs, history and the compress queue" Command="{Binding OpenDataFolderCommand}"/>
+                <Button DockPanel.Dock="Right" Content="Save" Style="{StaticResource PrimaryButton}"
+                        MinWidth="96" Margin="8,0,0,0" Padding="14,7" Command="{Binding SaveCommand}"/>
+                <Button DockPanel.Dock="Right" Content="Cancel" MinWidth="84" Padding="12,7" Command="{Binding CancelCommand}"/>
+            </DockPanel>
+        </Border>
+
+        <Grid Margin="24,18,24,14">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <DockPanel Margin="0,0,0,8">
+                <Button DockPanel.Dock="Left" Padding="10,6" Margin="0,0,14,0" VerticalAlignment="Center"
+                        Command="{Binding CancelCommand}" ToolTip="Back (without saving)">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="←" FontSize="15" Margin="0,0,6,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="Back" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <TextBlock Text="Settings" Style="{StaticResource Heading}" FontSize="19" VerticalAlignment="Center"/>
+            </DockPanel>
+
+            <TabControl x:Name="Tabs" Grid.Row="1" FontSize="13">
+                <TabItem x:Name="SystemTab" Header="System">
+                    <ScrollViewer Style="{StaticResource Page}">
+                        <StackPanel>
+                            <TextBlock Text="Output" Style="{StaticResource Section}"/>
+                            <Border x:Name="MovieFolderSetting" CornerRadius="8" Padding="10,8" Margin="-10,-8,-10,10" BorderThickness="2"
+                                    Background="Transparent" BorderBrush="Transparent">
+                                <StackPanel>
+                                    <TextBlock Text="Output path" Style="{StaticResource Label}"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox x:Name="MovieFolderBox" Text="{Binding MovieFolder, UpdateSourceTrigger=PropertyChanged}"/>
+                                        <Button Grid.Column="1" Content="Browse…" Margin="8,0,0,0" Command="{Binding BrowseMovieFolderCommand}"/>
+                                    </Grid>
+                                    <TextBlock Style="{StaticResource Note}"
+                                               Text="Where ripped DVDs and Blu-rays are saved. When you rip several titles from one disc (a TV season, say), they go together in a folder of their own inside it."/>
+                                </StackPanel>
+                            </Border>
+                            <TextBlock Text="Compressed output path" Style="{StaticResource Label}" Margin="0,4,0,6"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding CompressedFolder, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="1" Content="Browse…" Margin="8,0,0,0" Command="{Binding BrowseCompressedFolderCommand}"/>
+                            </Grid>
+                            <TextBlock Style="{StaticResource Note}"
+                                       Text="Where the smaller HandBrake copies are saved, with the same folder for each disc as above. Leave empty to save them next to the ripped MKV."/>
+                            <Border Style="{StaticResource Rule}"/>
+                            <TextBlock Text="Programs" Style="{StaticResource Section}"/>
+                            <TextBlock Text="MakeMKV (makemkvcon64.exe)" Style="{StaticResource Label}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding MakeMkvPath, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="1" Content="Browse…" Margin="8,0,0,0" Command="{Binding BrowseMakeMkvCommand}"/>
+                            </Grid>
+                            <TextBlock Text="{Binding MakeMkvFound}" Style="{StaticResource Note}"/>
+
+                            <TextBlock Text="HandBrake (HandBrakeCLI.exe)" Style="{StaticResource Label}" Margin="0,14,0,6"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding HandBrakePath, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="1" Content="Browse…" Margin="8,0,0,0" Command="{Binding BrowseHandBrakeCommand}"/>
+                            </Grid>
+                            <TextBlock Text="{Binding HandBrakeFound}" Style="{StaticResource Note}"/>
+
+                            <TextBlock Text="cyanrip (music CDs, e.g. cyanrip-win64.exe)" Style="{StaticResource Label}" Margin="0,14,0,6"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding CyanripPath, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="1" Content="Browse…" Margin="8,0,0,0" Command="{Binding BrowseCyanripCommand}"/>
+                            </Grid>
+                            <TextBlock Text="{Binding CyanripFound}" Style="{StaticResource Note}"/>
+                            <TextBlock Style="{StaticResource Note}" Margin="2,8,0,0" Text="Leave a box empty to find the program automatically."/>
+                            <Border Style="{StaticResource Rule}"/>
+                            <TextBlock Text="Blu-ray key (MakeMKV)" Style="{StaticResource Section}"/>
+                            <TextBlock Style="{StaticResource Note}" Margin="0,0,0,8"
+                                       Text="DVDs work without this. For Blu-rays MakeMKV needs a key. While it's in beta its author posts a free key on the MakeMKV forum, renewed every month or two."/>
+                            <Border Style="{StaticResource StatTile}" Padding="12,9">
+                                <TextBlock Text="{Binding KeyStatus}" TextWrapping="Wrap"/>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button Style="{StaticResource PrimaryButton}" Padding="12,6" Content="{Binding GetKeyText}" Command="{Binding GetBetaKeyCommand}"/>
+                                <Button Style="{StaticResource LinkButton}" Margin="14,0,0,0" VerticalAlignment="Center" Content="Enter a key myself…"
+                                        Command="{Binding ToggleKeyEntryCommand}"/>
+                            </StackPanel>
+                            <Grid Margin="0,10,0,0" Visibility="{Binding IsKeyEntryVisible, Converter={StaticResource BoolToVis}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding TypedKey, UpdateSourceTrigger=PropertyChanged}" FontFamily="Consolas"/>
+                                <Button Grid.Column="1" Content="Use this key" Margin="8,0,0,0" Command="{Binding UseTypedKeyCommand}"/>
+                            </Grid>
+                            <Border Style="{StaticResource Rule}"/>
+                            <TextBlock Text="Debug mode" Style="{StaticResource Section}"/>
+                            <CheckBox IsChecked="{Binding DebugMode}">
+                                <StackPanel>
+                                    <TextBlock Text="Turn on debug mode" FontWeight="SemiBold"/>
+                                    <TextBlock Style="{StaticResource Note}" Margin="0,2,0,0"
+                                               Text="Simulates ripping and compressing so you can try the whole workflow in a few minutes without a disc. Uses its own history and queue. The app restarts when you switch."/>
+                                </StackPanel>
+                            </CheckBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="DiscTab" Header="Blu-ray / DVD">
+                    <ScrollViewer Style="{StaticResource Page}">
+                        <StackPanel>
+                            <TextBlock Text="Defaults for each disc" Style="{StaticResource Section}"/>
+                            <TextBlock Text="Default quality for the smaller copy" Style="{StaticResource Label}"/>
+                            <ComboBox HorizontalAlignment="Left" Width="300" MaxDropDownHeight="380"
+                                      ItemsSource="{Binding PresetChoices}" SelectedItem="{Binding DefaultPreset, Mode=TwoWay}"/>
+                            <CheckBox Margin="0,12,0,0" IsChecked="{Binding UseGraphicsCard}">
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Default:" FontWeight="SemiBold"/> Use GPU for compression</TextBlock>
+                                    <TextBlock Text="{Binding GraphicsCardText}" Style="{StaticResource Note}" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </CheckBox>
+                            <CheckBox Margin="0,10,0,0" IsChecked="{Binding DeleteOriginal}">
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Default:" FontWeight="SemiBold"/> Delete original after compression</TextBlock>
+                                    <TextBlock Text="The ripped MKV is removed once its smaller copy is done." Style="{StaticResource Note}" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </CheckBox>
+                            <CheckBox Margin="0,10,0,0" IsChecked="{Binding AutoNext}">
+                                <StackPanel>
+                                    <TextBlock TextWrapping="Wrap"><Run Text="Default:" FontWeight="SemiBold"/> Keep Ripping!</TextBlock>
+                                    <TextBlock Text="After each disc, eject it, notify me, and wait for the next one." Style="{StaticResource Note}" Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </CheckBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="MusicTab" Header="Music CD">
+                    <ScrollViewer Style="{StaticResource Page}">
+                        <StackPanel>
+                            <TextBlock Text="Ripping music CDs" Style="{StaticResource Section}"/>
+                            <CheckBox IsChecked="{Binding CdLookup}">
+                                <StackPanel>
+                                    <TextBlock Text="Look up track details if they don't exist (MusicBrainz API)"/>
+                                    <TextBlock Style="{StaticResource Note}" Margin="0,2,0,0"
+                                               Text="Names stored on the CD itself are always used first."/>
+                                </StackPanel>
+                            </CheckBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="WindowsTab" Header="Windows">
+                    <ScrollViewer Style="{StaticResource Page}">
+                        <StackPanel>
+                            <TextBlock Text="Appearance" Style="{StaticResource Section}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Theme" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                                <ComboBox Width="200" SelectedIndex="{Binding ThemeIndex, Mode=TwoWay}">
+                                    <ComboBoxItem Content="Match Windows"/>
+                                    <ComboBoxItem Content="Light"/>
+                                    <ComboBoxItem Content="Dark"/>
+                                </ComboBox>
+                            </StackPanel>
+                            <TextBlock Style="{StaticResource Note}" Text="Changes when you click Save."/>
+
+                            <Border Style="{StaticResource Rule}"/>
+
+                            <TextBlock Text="Notifications" Style="{StaticResource Section}"/>
+                            <CheckBox IsChecked="{Binding Notifications}"
+                                      Content="Show Windows notifications (disc finished, compression finished, problems)"/>
+                            <StackPanel Orientation="Horizontal" Margin="28,6,0,0">
+                                <Button Style="{StaticResource LinkButton}" Content="Send a test notification" Command="{Binding TestNotificationCommand}"/>
+                            </StackPanel>
+                            <TextBlock Style="{StaticResource Note}" Margin="28,4,0,0"
+                                       Text="Nothing shows up? Check Windows Settings › System › Notifications: notifications on, Do not disturb off, and this app allowed."/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </DockPanel>
+</UserControl>

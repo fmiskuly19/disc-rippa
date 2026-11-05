@@ -1,0 +1,130 @@
+Checking G: for cdrom...
+		CDROM sensed: HL-DT-ST BD-RE BP50NB40   1.01
+
+
+Opening drive...
+Found MusicBrainz release: The Eternal Dance - Earth, Wind & Fire
+Downloading front cover art...
+Unable to get cover art "front": The redirect target URL could not be parsed: Unsupported URL scheme
+!
+Unable to get AccuRIP DB data: missing entry!
+cyanrip 0.9.3 (063d848)
+System device:  G:
+Device model:   HL-DT-ST BD-RE BP50NB40   1.01
+Offset:         +6 samples
+Overread:       +1 frame
+Overread mode:  fill with silence in lead-in/lead-out
+Speed:          default (unchangeable)
+C2 errors:      supported by drive
+Paranoia level: max
+Frame retries:  10
+HDCD decoding:  disabled
+Album Art:      none
+Outputs:        flac
+Disc number:    1
+Total discs:    3
+Disc tracks:    18
+Tracks to rip:  4
+DiscID:         ejA3TYAdO_hvqEDeN6hcab9q7yM-
+Release ID:     485562c0-4e6a-454b-8fbd-ead6917f633c
+CDDB ID:        DB121212
+Disc MCN:       0000000000000
+Album:          The Eternal Dance
+Album artist:   Earth, Wind & Fire
+AccurateRip:    not found
+Total time:     01:17:06.462
+
+Gaps:
+    None signalled
+
+Tracks:
+Ripping and encoding track 4, progress - 0.03%, ETA - 5h 50mRipping and encoding track 4, progress - 1.04%, ETA - 8m    Ripping and encoding track 4, progress - 2.06%, ETA - 4m    Ripping and encoding track 4, progress - 3.08%, ETA - 2m    Ripping and encoding track 4, progress - 4.10%, ETA - 2m    Ripping and encoding track 4, progress - 5.12%, ETA - 1m    Ripping and encoding track 4, progress - 6.14%, ETA - 1m    Ripping and encoding track 4, progress - 7.15%, ETA - 1m    Ripping and encoding track 4, progress - 8.17%, ETA - 1m    Ripping and encoding track 4, progress - 9.19%, ETA - 54s   Ripping and encoding track 4, progress - 10.21%, ETA - 48s  Ripping and encoding track 4, progress - 11.23%, ETA - 44s  Ripping and encoding track 4, progress - 12.25%, ETA - 40s  Ripping and encoding track 4, progress - 13.26%, ETA - 36s  Ripping and encoding track 4, progress - 14.28%, ETA - 33s  Ripping and encoding track 4, progress - 15.30%, ETA - 31s  Ripping and encoding track 4, progress - 16.32%, ETA - 29s  Ripping and encoding track 4, progress - 17.34%, ETA - 27s  Ripping and encoding track 4, progress - 18.36%, ETA - 25s  Ripping and encoding track 4, progress - 19.37%, ETA - 24s  Ripping and encoding track 4, progress - 20.39%, ETA - 22s  Ripping and encoding track 4, progress - 21.41%, ETA - 21s  Ripping and encoding track 4, progress - 22.43%, ETA - 20s  Ripping and encoding track 4, progress - 23.45%, ETA - 19s  Ripping and encoding track 4, progress - 24.47%, ETA - 18s  Ripping and encoding track 4, progress - 25.48%, ETA - 17s  Ripping and encoding track 4, progress - 26.50%, ETA - 16s  Ripping and encoding track 4, progress - 27.52%, ETA - 15s  Ripping and encoding track 4, progress - 28.54%, ETA - 14s  Ripping and encoding track 4, progress - 29.56%, ETA - 14s  Ripping and encoding track 4, progress - 30.58%, ETA - 29s  Ripping and encoding track 4, progress - 31.59%, ETA - 27s  Ripping and encoding track 4, progress - 32.61%, ETA - 26s  Ripping and encoding track 4, progress - 33.63%, ETA - 25s  Ripping and encoding track 4, progress - 34.65%, ETA - 24s  Ripping and encoding track 4, progress - 35.67%, ETA - 23s  Ripping and encoding track 4, progress - 36.69%, ETA - 22s  Ripping and encoding track 4, progress - 37.70%, ETA - 21s  Ripping and encoding track 4, progress - 38.72%, ETA - 20s  Ripping and encoding track 4, progress - 39.74%, ETA - 19s  Ripping and encoding track 4, progress - 40.76%, ETA - 19s  Ripping and encoding track 4, progress - 41.78%, ETA - 18s  Ripping and encoding track 4, progress - 42.80%, ETA - 17s  Ripping and encoding track 4, progress - 43.81%, ETA - 16s  Ripping and encoding track 4, progress - 44.83%, ETA - 16s  Ripping and encoding track 4, progress - 45.85%, ETA - 15s  Ripping and encoding track 4, progress - 46.87%, ETA - 15s  Ripping and encoding track 4, progress - 47.89%, ETA - 14s  Ripping and encoding track 4, progress - 48.91%, ETA - 13s  Ripping and encoding track 4, progress - 49.92%, ETA - 13s  Ripping and encoding track 4, progress - 50.94%, ETA - 12s  Ripping and encoding track 4, progress - 51.96%, ETA - 12s  Ripping and encoding track 4, progress - 52.98%, ETA - 11s  Ripping and encoding track 4, progress - 54.00%, ETA - 11s  Ripping and encoding track 4, progress - 55.02%, ETA - 11s  Ripping and encoding track 4, progress - 56.03%, ETA - 10s  Ripping and encoding track 4, progress - 57.05%, ETA - 10s  Ripping and encoding track 4, progress - 58.07%, ETA - 9s   Ripping and encoding track 4, progress - 59.09%, ETA - 9s   Ripping and encoding track 4, progress - 60.11%, ETA - 11s  Ripping and encoding track 4, progress - 61.13%, ETA - 11s  Ripping and encoding track 4, progress - 62.14%, ETA - 10s  Ripping and encoding track 4, progress - 63.16%, ETA - 10s  Ripping and encoding track 4, progress - 64.18%, ETA - 9s   Ripping and encoding track 4, progress - 65.20%, ETA - 9s   Ripping and encoding track 4, progress - 66.22%, ETA - 9s   Ripping and encoding track 4, progress - 67.24%, ETA - 8s   Ripping and encoding track 4, progress - 68.25%, ETA - 8s   Ripping and encoding track 4, progress - 69.27%, ETA - 7s   Ripping and encoding track 4, progress - 70.29%, ETA - 7s   Ripping and encoding track 4, progress - 71.31%, ETA - 7s   Ripping and encoding track 4, progress - 72.33%, ETA - 6s   Ripping and encoding track 4, progress - 73.35%, ETA - 6s   Ripping and encoding track 4, progress - 74.36%, ETA - 6s   Ripping and encoding track 4, progress - 75.38%, ETA - 5s   Ripping and encoding track 4, progress - 76.40%, ETA - 5s   Ripping and encoding track 4, progress - 77.42%, ETA - 5s   Ripping and encoding track 4, progress - 78.44%, ETA - 5s   Ripping and encoding track 4, progress - 79.46%, ETA - 4s   Ripping and encoding track 4, progress - 80.47%, ETA - 4s   Ripping and encoding track 4, progress - 81.49%, ETA - 4s   Ripping and encoding track 4, progress - 82.51%, ETA - 4s   Ripping and encoding track 4, progress - 83.53%, ETA - 3s   Ripping and encoding track 4, progress - 84.55%, ETA - 3s   Ripping and encoding track 4, progress - 85.57%, ETA - 3s   Ripping and encoding track 4, progress - 86.58%, ETA - 3s   Ripping and encoding track 4, progress - 87.60%, ETA - 2s   Ripping and encoding track 4, progress - 88.62%, ETA - 2s   Ripping and encoding track 4, progress - 89.64%, ETA - 2s   Ripping and encoding track 4, progress - 90.66%, ETA - 2s   Ripping and encoding track 4, progress - 91.68%, ETA - 2s   Ripping and encoding track 4, progress - 92.69%, ETA - 2s   Ripping and encoding track 4, progress - 93.71%, ETA - 1s   Ripping and encoding track 4, progress - 94.73%, ETA - 1s   Ripping and encoding track 4, progress - 95.75%, ETA - 1s   Ripping and encoding track 4, progress - 96.77%, ETA - 1s   Ripping and encoding track 4, progress - 97.79%, ETA - 1s   Ripping and encoding track 4, progress - 98.80%, ETA - 0s   Ripping and encoding track 4, progress - 99.82%, ETA - 0s   Ripping and encoding track 4, progress - 100.00%, ETA - 0s  
+Flushing encoders...
+Track 4 ripped and encoded successfully!
+Summary:
+
+  Integrated loudness:
+    I:         -23.1 LUFS
+    Threshold: -33.7 LUFS
+
+  Loudness range:
+    LRA:        10.0 LU
+    Threshold: -43.6 LUFS
+    LRA low:   -31.1 LUFS
+    LRA high:  -21.1 LUFS
+
+  True peak:
+    Peak:       -5.2 dBFS
+
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:00:52.000
+    Samples:     2309076
+    Frames:      3927
+    Pregap LSN:  none
+    Start LSN:   70665
+    End LSN:     74591 (with offset: 74592)
+
+  EAC CRC32:     B04BDF4C
+  Accurip:       not found
+    Accurip v1:  C6D3AE2C
+    Accurip v2:  268A269F
+    Accurip 450: A85A6A78
+
+  Metadata:
+    mbid:                          8cb224c3-4c6a-4da9-88f1-f8e07d283d3a
+    title:                         Interlude
+    artist:                        Earth, Wind & Fire
+    track:                         4
+    tracktotal:                    18
+    disc_mcn:                      0000000000000
+    discid:                        ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:                          DB121212
+    media_type:                    CD
+    comment:                       cyanrip 0.9.3
+    date:                          1992-09-22
+    release_id:                    485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:                         The Eternal Dance
+    barcode:                       074645243924
+    packaging:                     Jewel Case
+    country:                       US
+    status:                        Official
+    album_artist:                  Earth, Wind & Fire
+    totaldiscs:                    3
+    disc:                          1
+    discname:                      Volume 1, 1971-1975
+    format:                        CD
+    isrc:                          000000000000
+    creation_time:                 2026-11-01T21:44:57
+    REPLAYGAIN_TRACK_GAIN:         5.06 dB
+    R128_TRACK_GAIN:               2574
+    REPLAYGAIN_TRACK_RANGE:        9.99 dB
+    REPLAYGAIN_TRACK_PEAK:         0.546488
+    REPLAYGAIN_REFERENCE_LOUDNESS: -18.00 LUFS
+
+  File(s):
+    The Eternal Dance/04 - Interlude.flac
+
+Album Loudness Summary:
+
+  Integrated loudness:
+    I:         -23.1 LUFS
+    Threshold: -33.7 LUFS
+
+  Loudness range:
+    LRA:        10.0 LU
+    Threshold: -43.6 LUFS
+    LRA low:   -31.1 LUFS
+    LRA high:  -21.1 LUFS
+
+  True peak:
+    Peak:       -5.2 dBFS
+
+Paranoia status counts:
+  READ:          1351
+  VERIFY:        175
+  OVERLAP:       31
+
+Ripping errors: 0
+Ripping finished at 2026-11-01T21:45:19

@@ -1,0 +1,20 @@
+# build output
+bin/
+obj/
+publish/
+/DiscRippa.exe
+
+# IDE
+*.user
+.vs/
+.idea/
+
+# local leftovers
+*.zip
+build.log
+_build_for_claude.cmd
+
+# third-party tools: download them yourself (see README); never commit them
+cyanrip*.exe
+HandBrakeCLI*.exe
+makemkvcon*.exe

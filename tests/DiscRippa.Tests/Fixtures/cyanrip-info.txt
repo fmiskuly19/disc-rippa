@@ -1,0 +1,821 @@
+Checking G: for cdrom...
+		CDROM sensed: HL-DT-ST BD-RE BP50NB40   1.01
+
+
+Opening drive...
+Found MusicBrainz release: The Eternal Dance - Earth, Wind & Fire
+MusicBrainz URL:
+https://musicbrainz.org/cdtoc/attach?toc=1+18+347120+150+21410+44155+70815+74742+91200+113330+150315+173595+196147+210050+229960+232760+255755+271057+285942+308422+321197&tracks=18&id=ejA3TYAdO_hvqEDeN6hcab9q7yM-
+Unable to get cover art "back": not found!
+Unable to get AccuRIP DB data: missing entry!
+Log(s) will be written to:
+    The Eternal Dance [FLAC]/The Eternal Dance CD1.log
+CUE files will be written to:
+    The Eternal Dance [FLAC]/The Eternal Dance CD1.cue
+cyanrip 0.9.3 (063d848)
+System device:  G:
+Device model:   HL-DT-ST BD-RE BP50NB40   1.01
+Offset:         +0 samples
+Overread:       +0 frames
+Overread mode:  fill with silence in lead-in/lead-out
+Speed:          default (unchangeable)
+C2 errors:      supported by drive
+Paranoia level: max
+Frame retries:  10
+HDCD decoding:  disabled
+Album Art:      Front (From: Cover Art DB)
+Outputs:        flac
+Disc number:    1
+Total discs:    3
+Disc tracks:    18
+Tracks to rip:  all
+DiscID:         ejA3TYAdO_hvqEDeN6hcab9q7yM-
+Release ID:     485562c0-4e6a-454b-8fbd-ead6917f633c
+CDDB ID:        DB121212
+Disc MCN:       0000000000000
+Album:          The Eternal Dance
+Album artist:   Earth, Wind & Fire
+AccurateRip:    not found
+Total time:     01:17:06.462
+
+Gaps:
+    None signalled
+
+Cover art destination(s):
+    The Eternal Dance [FLAC]/Front.jpg
+
+Tracks:
+Track 1 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:04:43.240
+    Samples:     12500880
+    Frames:      21260
+    Pregap LSN:  none
+    Start LSN:   0
+    End LSN:     21259
+  Accurip:       not found
+
+  Metadata:
+    mbid:         e7009159-d511-42a6-9cac-d2cdba32521d
+    title:        Fan the Fire
+    artist:       Earth, Wind & Fire
+    track:        1
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.01 - Fan the Fire.flac
+
+Track 2 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:03.300
+    Samples:     13374060
+    Frames:      22745
+    Pregap LSN:  none
+    Start LSN:   21260
+    End LSN:     44004
+  Accurip:       not found
+
+  Metadata:
+    mbid:         8d9b186f-ea34-437f-8c11-8a69bb928ad5
+    title:        Love Is Life
+    artist:       Earth, Wind & Fire
+    track:        2
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.02 - Love Is Life.flac
+
+Track 3 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:55.300
+    Samples:     15676080
+    Frames:      26660
+    Pregap LSN:  none
+    Start LSN:   44005
+    End LSN:     70664
+  Accurip:       not found
+
+  Metadata:
+    mbid:         78136286-6575-43b1-8329-02a65e30648d
+    title:        I Think About Lovin’ You
+    artist:       Earth, Wind & Fire
+    track:        3
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.03 - I Think About Lovin’ You.flac
+
+Track 4 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:00:52.000
+    Samples:     2309076
+    Frames:      3927
+    Pregap LSN:  none
+    Start LSN:   70665
+    End LSN:     74591
+  Accurip:       not found
+
+  Metadata:
+    mbid:         8cb224c3-4c6a-4da9-88f1-f8e07d283d3a
+    title:        Interlude
+    artist:       Earth, Wind & Fire
+    track:        4
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.04 - Interlude.flac
+
+Track 5 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:03:39.180
+    Samples:     9677304
+    Frames:      16458
+    Pregap LSN:  none
+    Start LSN:   74592
+    End LSN:     91049
+  Accurip:       not found
+
+  Metadata:
+    mbid:         cf384954-3b59-4785-8fba-4b803c9015b9
+    title:        Time Is on Your Side
+    artist:       Earth, Wind & Fire
+    track:        5
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.05 - Time Is on Your Side.flac
+
+Track 6 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:04:55.240
+    Samples:     13012440
+    Frames:      22130
+    Pregap LSN:  none
+    Start LSN:   91050
+    End LSN:     113179
+  Accurip:       not found
+
+  Metadata:
+    mbid:         6c6bff75-a2ed-4445-8a63-5d25bd24ec31
+    title:        Where Have All the Flowers Gone
+    artist:       Earth, Wind & Fire
+    track:        6
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.06 - Where Have All the Flowers Gone.flac
+
+Track 7 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:08:13.480
+    Samples:     21747180
+    Frames:      36985
+    Pregap LSN:  none
+    Start LSN:   113180
+    End LSN:     150164
+  Accurip:       not found
+
+  Metadata:
+    mbid:         9f6fae55-9c5d-41bd-948b-66131a098842
+    title:        Power
+    artist:       Earth, Wind & Fire
+    track:        7
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.07 - Power.flac
+
+Track 8 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:10.300
+    Samples:     13688640
+    Frames:      23280
+    Pregap LSN:  none
+    Start LSN:   150165
+    End LSN:     173444
+  Accurip:       not found
+
+  Metadata:
+    mbid:         0e91c41e-2c13-4bf6-9e41-c302b77817b7
+    title:        Keep Your Head to the Sky
+    artist:       Earth, Wind & Fire
+    track:        8
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.08 - Keep Your Head to the Sky.flac
+
+Track 9 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:00.300
+    Samples:     13260576
+    Frames:      22552
+    Pregap LSN:  none
+    Start LSN:   173445
+    End LSN:     195996
+  Accurip:       not found
+
+  Metadata:
+    mbid:         291da80d-9dd0-4a44-85b2-221654a103da
+    title:        Evil
+    artist:       Earth, Wind & Fire
+    track:        9
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.09 - Evil.flac
+
+Track 10 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:03:05.180
+    Samples:     8174964
+    Frames:      13903
+    Pregap LSN:  none
+    Start LSN:   195997
+    End LSN:     209899
+  Accurip:       not found
+
+  Metadata:
+    mbid:         9dac8b0a-7902-4a94-a01f-9f6ed09843bc
+    title:        Mighty Mighty
+    artist:       Earth, Wind & Fire
+    track:        10
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.10 - Mighty Mighty.flac
+
+Track 11 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:04:25.240
+    Samples:     11707080
+    Frames:      19910
+    Pregap LSN:  none
+    Start LSN:   209900
+    End LSN:     229809
+  Accurip:       not found
+
+  Metadata:
+    mbid:         edbea847-210b-4874-b38b-f8e186e77e30
+    title:        Feelin’ Blue
+    artist:       Earth, Wind & Fire
+    track:        11
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.11 - Feelin’ Blue.flac
+
+Track 12 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:00:37.000
+    Samples:     1646400
+    Frames:      2800
+    Pregap LSN:  none
+    Start LSN:   229810
+    End LSN:     232609
+  Accurip:       not found
+
+  Metadata:
+    mbid:         0f316ba7-c69c-4960-a639-0d42ef67e164
+    title:        Hey Girl (interlude)
+    artist:       Earth, Wind & Fire
+    track:        12
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.12 - Hey Girl (interlude).flac
+
+Track 13 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:06.300
+    Samples:     13521060
+    Frames:      22995
+    Pregap LSN:  none
+    Start LSN:   232610
+    End LSN:     255604
+  Accurip:       not found
+
+  Metadata:
+    mbid:         5c070457-7507-42f9-aaa1-4bd74af4d121
+    title:        Open Our Eyes
+    artist:       Earth, Wind & Fire
+    track:        13
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.13 - Open Our Eyes.flac
+
+Track 14 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:03:24.180
+    Samples:     8997576
+    Frames:      15302
+    Pregap LSN:  none
+    Start LSN:   255605
+    End LSN:     270906
+  Accurip:       not found
+
+  Metadata:
+    mbid:         160c847d-1d12-47f1-8f06-3a07c62cdb55
+    title:        Shining Star (alternate version)
+    artist:       Earth, Wind & Fire
+    track:        14
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.14 - Shining Star (alternate version).flac
+
+Track 15 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:03:18.180
+    Samples:     8752380
+    Frames:      14885
+    Pregap LSN:  none
+    Start LSN:   270907
+    End LSN:     285791
+  Accurip:       not found
+
+  Metadata:
+    mbid:         590b1300-e1bf-470c-a413-01bc90e5509e
+    title:        Happy Feeling
+    artist:       Earth, Wind & Fire
+    track:        15
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.15 - Happy Feeling.flac
+
+Track 16 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:04:59.240
+    Samples:     13218240
+    Frames:      22480
+    Pregap LSN:  none
+    Start LSN:   285792
+    End LSN:     308271
+  Accurip:       not found
+
+  Metadata:
+    mbid:         eaf013dd-0000-4ee6-a7fb-0ae40288e9c2
+    title:        Reasons
+    artist:       Earth, Wind & Fire
+    track:        16
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.16 - Reasons.flac
+
+Track 17 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:02:50.120
+    Samples:     7511700
+    Frames:      12775
+    Pregap LSN:  none
+    Start LSN:   308272
+    End LSN:     321046
+  Accurip:       not found
+
+  Metadata:
+    mbid:         7d418f2a-d819-479b-8ab1-656a9efaa3e1
+    title:        Shining Star
+    artist:       Earth, Wind & Fire
+    track:        17
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.17 - Shining Star.flac
+
+Track 18 info:
+  Preemphasis:   none detected
+
+  Properties:
+    Duration:    00:05:45.300
+    Samples:     15242724
+    Frames:      25923
+    Pregap LSN:  none
+    Start LSN:   321047
+    End LSN:     346969
+  Accurip:       not found
+
+  Metadata:
+    mbid:         7862547b-93bc-4696-96b3-db3595a65726
+    title:        That’s the Way of the World
+    artist:       Earth, Wind & Fire
+    track:        18
+    tracktotal:   18
+    disc_mcn:     0000000000000
+    discid:       ejA3TYAdO_hvqEDeN6hcab9q7yM-
+    cddb:         DB121212
+    media_type:   CD
+    comment:      cyanrip 0.9.3
+    date:         1992-09-22
+    release_id:   485562c0-4e6a-454b-8fbd-ead6917f633c
+    album:        The Eternal Dance
+    barcode:      074645243924
+    packaging:    Jewel Case
+    country:      US
+    status:       Official
+    album_artist: Earth, Wind & Fire
+    totaldiscs:   3
+    disc:         1
+    discname:     Volume 1, 1971-1975
+    format:       CD
+    isrc:         000000000000
+
+  Embedded cover art:
+    Front: http://coverartarchive.org/release/485562c0-4e6a-454b-8fbd-ead6917f633c/front
+
+  File(s):
+    The Eternal Dance [FLAC]/1.18 - That’s the Way of the World.flac
+

@@ -1,0 +1,98 @@
+<Window x:Class="DiscRippa.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:DiscRippa.Views"
+        xmlns:vm="clr-namespace:DiscRippa.ViewModels.Shared;assembly=DiscRippa.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+        Title="{Binding WindowTitle}"
+        Style="{StaticResource AppWindow}"
+        Icon="/Assets/app.ico"
+        Width="1120" Height="780" MinWidth="920" MinHeight="640"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo ProgressState="{Binding TaskbarState, Converter={StaticResource TaskbarState}}"
+                         ProgressValue="{Binding TaskbarValue}"/>
+    </Window.TaskbarItemInfo>
+
+    <Grid>
+        <Grid Margin="24,16,24,20" Visibility="{Binding Navigation.IsSettingsOpen, Converter={StaticResource NotBoolToVis}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource DebugBannerStyle}" Margin="0,0,0,12"
+                    Visibility="{Binding IsDebug, Converter={StaticResource BoolToVis}}">
+                <DockPanel LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Content="Turn off debug mode" Margin="12,0,0,0" Command="{Binding TurnOffDebugCommand}"/>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource WarnBrush}">
+                        <Run FontWeight="SemiBold" Text="Debug mode:"/>
+                        <Run Text="ripping and compressing are simulated. No disc is read; a new pretend disc goes in a few seconds after the last one comes out. Files written are small placeholders, and the history and queue here are separate from your real ones."/>
+                    </TextBlock>
+                </DockPanel>
+            </Border>
+
+            <!-- ===== Top row: which kind of disc, the drive, and Settings ===== -->
+            <DockPanel Grid.Row="1" Margin="0,0,0,14" LastChildFill="False">
+                <Border Style="{StaticResource ModeSwitchTrack}" DockPanel.Dock="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton GroupName="Mode" Style="{StaticResource ModeSwitchButton}"
+                                     IsChecked="{Binding IsVideoMode, Mode=OneWay}" Command="{Binding ShowVideoCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🎬" FontFamily="Segoe UI Emoji" Margin="0,0,8,0"/>
+                                <TextBlock Text="DVD / Blu-ray"/>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton GroupName="Mode" Style="{StaticResource ModeSwitchButton}" Margin="4,0,0,0"
+                                     IsChecked="{Binding IsCdMode, Mode=OneWay}" Command="{Binding ShowCdCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🎵" FontFamily="Segoe UI Emoji" Margin="0,0,8,0"/>
+                                <TextBlock Text="Music CD"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+                </Border>
+
+                <Button DockPanel.Dock="Right" VerticalAlignment="Center" Margin="10,0,0,0" Padding="12,8"
+                        Content="⚙  Settings" Command="{Binding OpenSettingsCommand}"/>
+
+                <views:DriveBoxView DockPanel.Dock="Right" DataContext="{Binding Drive}" MaxWidth="520" VerticalAlignment="Center"/>
+
+            </DockPanel>
+
+            <!-- ===== DVD / Blu-ray side ===== -->
+            <TabControl x:Name="VideoTabs" Grid.Row="2" SelectionChanged="VideoTabs_SelectionChanged"
+                        Visibility="{Binding IsVideoMode, Converter={StaticResource BoolToVis}}">
+                <TabItem Header="Rip Disc">
+                    <views:VideoRipView DataContext="{Binding Video}"/>
+                </TabItem>
+                <TabItem x:Name="VideoHistoryTab" Header="Ripped Discs">
+                    <views:HistoryView DataContext="{Binding VideoHistory}"/>
+                </TabItem>
+                <TabItem Header="{Binding Queue.Header}">
+                    <views:QueueView DataContext="{Binding Queue}"/>
+                </TabItem>
+            </TabControl>
+
+            <!-- ===== Music CD side ===== -->
+            <TabControl x:Name="CdTabs" Grid.Row="2" SelectionChanged="CdTabs_SelectionChanged"
+                        Visibility="{Binding IsCdMode, Converter={StaticResource BoolToVis}}">
+                <TabItem Header="Rip CD">
+                    <views:CdRipView DataContext="{Binding Cd}"/>
+                </TabItem>
+                <TabItem x:Name="MusicHistoryTab" Header="Ripped CDs">
+                    <views:HistoryView DataContext="{Binding MusicHistory}"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <!-- ===== Settings: replaces everything above while it's open ===== -->
+        <views:SettingsView Margin="24,16,24,20" DataContext="{Binding Navigation.Settings}"
+                            Visibility="{Binding DataContext.Navigation.IsSettingsOpen, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}"/>
+    </Grid>
+</Window>

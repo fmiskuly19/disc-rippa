@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The WPF app: views (XAML), the Windows side of the services the view models use (dialogs, the tray icon, Explorer),
+    and Composition.cs, which puts everything together with dependency injection.
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- The Windows 10 SDK version is what makes real Windows notifications (toasts) available. -->
+    <TargetFramework>$(AppTfm)-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>DiscRippa</RootNamespace>
+    <AssemblyName>DiscRippa</AssemblyName>
+    <AssemblyTitle>DiscRippa</AssemblyTitle>
+    <Product>DiscRippa</Product>
+    <Version>1.0.0</Version>
+    <Description>Rip movies and TV shows from DVDs and Blu-rays, and music CDs, with MakeMKV, HandBrake and cyanrip.</Description>
+    <Authors>fmiskuly19</Authors>
+    <Copyright>Copyright (c) 2026 fmiskuly19. MIT License.</Copyright>
+    <RepositoryUrl>https://github.com/fmiskuly19/disc-rippa</RepositoryUrl>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- WPF needs the per-monitor DPI setting in app.manifest; the WinForms analyzer only applies to WinForms windows. -->
+    <NoWarn>$(NoWarn);WFAC010;WFO0003</NoWarn>
+  </PropertyGroup>
+
+  <!-- dotnet publish -c Release  ->  one self-contained DiscRippa.exe, no .NET install needed -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DiscRippa.Core\DiscRippa.Core.csproj" />
+    <ProjectReference Include="..\DiscRippa.ViewModels\DiscRippa.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

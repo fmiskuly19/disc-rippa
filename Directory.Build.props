@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- Change this (or pass -p:AppTfm=net10.0) to target a newer .NET. -->
+    <AppTfm Condition="'$(AppTfm)' == ''">net10.0</AppTfm>
+    <LangVersion>latest</LangVersion>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+</Project>

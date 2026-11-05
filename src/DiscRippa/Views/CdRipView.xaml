@@ -1,0 +1,119 @@
+<UserControl x:Class="DiscRippa.Views.CdRipView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:DiscRippa.Views"
+             xmlns:vm="clr-namespace:DiscRippa.ViewModels.Music;assembly=DiscRippa.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:CdRipViewModel}">
+    <!-- The Music CD tab: the status card (waiting, reading, ripping) or, once a CD is read, the CD screen. -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Style="{StaticResource Banner}" Margin="0,0,0,12" Visibility="{Binding CyanripMissing, Converter={StaticResource BoolToVis}}">
+            <DockPanel LastChildFill="True">
+                <Button DockPanel.Dock="Right" Content="Locate cyanrip…" Margin="12,0,0,0" Command="{Binding LocateCyanripCommand}"/>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource DangerBrush}"
+                           Text="cyanrip wasn't found, so music CD ripping is off. It's included in the tools folder. Or download cyanrip-win64.exe from github.com/cyanreg/cyanrip/releases, then click Locate cyanrip…"/>
+            </DockPanel>
+        </Border>
+
+        <!-- ===== Status / ripping view ===== -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto"
+                      Visibility="{Binding ShowStatusCard, Converter={StaticResource BoolToVis}}">
+          <StackPanel VerticalAlignment="Center">
+            <Border Style="{StaticResource DebugBannerStyle}" Margin="0,4,0,14" MaxWidth="780"
+                    Visibility="{Binding HasOtherDisc, Converter={StaticResource BoolToVis}}">
+                <DockPanel LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource PrimaryButton}" Margin="14,0,0,0" Padding="14,8"
+                            Command="{Binding DataContext.SwitchToVideoCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🎬" FontFamily="Segoe UI Emoji" Margin="0,0,6,0"/>
+                            <TextBlock Text="Switch to DVD / Blu-ray"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Foreground="{DynamicResource WarnBrush}">
+                        <Run FontWeight="SemiBold" Text="A DVD, Blu-ray or data disc is in the drive."/>
+                        <Run Text="Music CD mode can't rip it. Switch to DVD / Blu-ray mode to rip it to MKV."/>
+                    </TextBlock>
+                </DockPanel>
+            </Border>
+            <Border Style="{StaticResource Card}" MaxWidth="780" Padding="36,30" Margin="0,4">
+                <StackPanel>
+                    <TextBlock Text="{Binding Status}" Style="{StaticResource Heading}" TextAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Detail}" Style="{StaticResource SubtleText}" TextAlignment="Center" Margin="0,8,0,0"/>
+                    <ProgressBar Margin="0,20,0,0" Height="10"
+                                 Value="{Binding Progress, Mode=OneWay}"
+                                 IsIndeterminate="{Binding Indeterminate, Mode=OneWay}"/>
+
+                    <StackPanel Margin="0,16,0,0" DataContext="{Binding Stats}" Visibility="{Binding IsVisible, Converter={StaticResource BoolToVis}}">
+                        <TextBlock Text="{Binding TrackText}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                        <UniformGrid Columns="3" Margin="0,14,0,0">
+                            <Border Style="{StaticResource StatTile}" Margin="0,0,6,0">
+                                <StackPanel>
+                                    <TextBlock Text="ELAPSED" Style="{StaticResource StatLabel}"/>
+                                    <TextBlock Text="{Binding ElapsedText}" Style="{StaticResource StatValue}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatTile}" Margin="3,0">
+                                <StackPanel>
+                                    <TextBlock Text="TIME LEFT" Style="{StaticResource StatLabel}"/>
+                                    <TextBlock Text="{Binding RemainingText}" Style="{StaticResource StatValue}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatTile}" Margin="6,0,0,0">
+                                <StackPanel>
+                                    <TextBlock Text="SPEED" Style="{StaticResource StatLabel}"/>
+                                    <TextBlock Text="{Binding SpeedText}" Style="{StaticResource StatValue}"/>
+                                </StackPanel>
+                            </Border>
+                        </UniformGrid>
+
+                        <Expander Header="cyanrip messages" Margin="0,14,0,0" Foreground="{DynamicResource SubtleBrush}">
+                            <ListBox ItemsSource="{Binding DataContext.Log.Lines, RelativeSource={RelativeSource AncestorType=UserControl}}" views:AutoScroll.ToEnd="True" Height="180" Margin="0,8,0,0"
+                                     FontFamily="Consolas" FontSize="12" BorderBrush="{DynamicResource LineBrush}"
+                                     Foreground="{DynamicResource TextBrush}"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+                        </Expander>
+                    </StackPanel>
+
+                    <Border Style="{StaticResource Banner}" Margin="0,16,0,0"
+                            Visibility="{Binding HasWarning, Converter={StaticResource BoolToVis}}">
+                        <TextBlock Text="{Binding Warning}" TextWrapping="Wrap" Foreground="{DynamicResource DangerBrush}"/>
+                    </Border>
+
+                    <Button Style="{StaticResource PrimaryButton}" Margin="0,24,0,0"
+                            HorizontalAlignment="Center" MinWidth="220" Height="50" FontSize="16"
+                            Content="{Binding ButtonText}" Command="{Binding PrimaryCommand}" IsEnabled="{Binding PrimaryEnabled}"/>
+
+                    <StackPanel HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <CheckBox IsChecked="{Binding AutoNext}" IsEnabled="{Binding AutoNextEnabled}">
+                            <TextBlock TextWrapping="Wrap">
+                                <Run FontWeight="SemiBold" Text="Keep Ripping!"/>
+                                <Run Text="after each CD, eject it, notify me, and wait for the next one"/>
+                            </TextBlock>
+                        </CheckBox>
+                        <CheckBox IsChecked="{Binding Automation}" Margin="0,10,0,0" IsEnabled="{Binding CanChangeAutomation}"
+                                  ToolTipService.ShowOnDisabled="True"
+                                  ToolTip="Can't be changed while a CD is being read or ripped. Finish or cancel it first.">
+                            <TextBlock TextWrapping="Wrap">
+                                <Run FontWeight="SemiBold" Text="Automation mode:"/>
+                                <Run Text="when a CD goes in, look it up, rip every track to FLAC and eject it. No clicks needed."/>
+                            </TextBlock>
+                        </CheckBox>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+          </StackPanel>
+        </ScrollViewer>
+
+        <!-- ===== CD screen: shown after a CD has been read ===== -->
+        <Grid Grid.Row="1" Visibility="{Binding IsReviewing, Converter={StaticResource BoolToVis}}">
+            <views:CdReviewView DataContext="{Binding Review}"/>
+        </Grid>
+    </Grid>
+</UserControl>

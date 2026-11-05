@@ -1,0 +1,46 @@
+# DiscRippa code style. Visual Studio and Rider pick this up automatically.
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{xaml,csproj,props,xml,json,yml}]
+indent_size = 4
+
+[*.yml]
+indent_size = 2
+
+[*.cs]
+# braces always on their own line
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+
+# usings: System first, global usings live in each project's GlobalUsings.cs
+dotnet_sort_system_directives_first = true
+csharp_using_directive_placement = outside_namespace
+
+# file-scoped namespaces, var where the type is obvious
+csharp_style_namespace_declarations = file_scoped:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+# naming: _camelCase private fields, PascalCase everything public
+dotnet_naming_rule.private_fields_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_underscore.style = underscore_camel
+dotnet_naming_rule.private_fields_underscore.severity = suggestion
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+dotnet_naming_style.underscore_camel.required_prefix = _
+dotnet_naming_style.underscore_camel.capitalization = camel_case
+
+# House rules that tools can't check (please follow them by hand):
+#   - comments are written //like this (no space, lower-case first word)
+#   - members are grouped in #regions, in this order: Fields, Properties, Constructors, Events, Commands, Methods
+#     (only the regions a type needs; [ObservableProperty] fields go under Properties, nested types at the end)
+#   - every method, command and constructor has a /// <summary>

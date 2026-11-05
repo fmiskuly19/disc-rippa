@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Everything that isn't a screen: reading discs, ripping, compressing, history, settings. No UI code, fully tested. -->
+  <PropertyGroup>
+    <TargetFramework>$(AppTfm)</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>DiscRippa.Core</RootNamespace>
+    <AssemblyName>DiscRippa.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+</Project>

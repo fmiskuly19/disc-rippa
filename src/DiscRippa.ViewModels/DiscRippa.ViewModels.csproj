@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The screens' logic (MVVM view models), with no WPF in it: windows, dialogs, notifications and file pickers are
+    reached through the interfaces in Services/, which the WPF app implements. That keeps all of this unit-testable.
+  -->
+  <PropertyGroup>
+    <TargetFramework>$(AppTfm)</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>DiscRippa.ViewModels</RootNamespace>
+    <AssemblyName>DiscRippa.ViewModels</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DiscRippa.Core\DiscRippa.Core.csproj" />
+  </ItemGroup>
+
+</Project>
